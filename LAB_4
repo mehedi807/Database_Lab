@@ -1,0 +1,48 @@
+CREATE TABLE Salaseman(
+    S_id int,
+    Name varchar(20),
+    City varchar(20),
+    Commission int
+    );
+
+Insert INTO salaseman( S_id,Name,City,Commission)
+VALUES (1,Hasan,Dhaka,15000);
+
+CREATE TABLE product(
+    p_id int,
+    company varchar(20),
+    quantity int,
+    rate int,
+    cost int
+    )
+INSERT INTO product(p_id,company,quantity,rate,cost)
+VALUES(1,'Company1',2,10,20),(2,'Company2',3,25,75),(3,'Company1',2,30,60),(4,'Company3',5,10,50),(5,'Company2',2,20,40),(6,'Company1',3,25,75),(7,'Company1',5,30,150),(8,'Company1',3,10,30);
+
+
+CREATE TABLE order(
+    ord_no int,
+    purch_amnt int,
+    ord_date int,
+    c_id int,
+    s_id
+    )
+
+INSERT INTO order2( ord_no,purch_amnt,ord_date,c_id,s_id)
+VALUES(123,300,'May-15',11,1),(112,2000,'May-16',12,2),(113,1500,'May-16',13,3),(114,700,'May-18',14,4),(115,645,'May-18',15,5);
+
+CREATE TABLE customer(
+    c_id int,
+    c_name varchar(20),
+    city varchar(20),
+    grade int,
+    s-id INTO
+);
+
+ c_id,c_name,city,grade,s-id
+
+
+
+
+
+
+
