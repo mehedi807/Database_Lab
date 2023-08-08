@@ -1,0 +1,49 @@
+CREATE TABLE Depertments(
+    DEPT_ID int,
+    DEPT_Name varchar(20),
+    Manager_ID int,
+    Location_ID int 
+    );
+INSERT INTO depertments( DEPT_ID,DEPT_Name,Manager_ID,Location_ID)
+VALUES(101,'IT',551,01),(102,'IT',552,02),(103,'HRM',553,03),(104,'HRM',554,04);
+
+CREATE TABLE Employee(
+    EMP_ID int,
+    FIRST_Name varchar(20),
+    LAST_Name varchar(20),
+    EMAIL varchar(20),
+    Phone_Number int,
+    HIRE_Date varchar(20),
+    JOB_ID int,
+    SALARY int,
+    COMMISSION int,
+    Manager_ID int,
+    DEPT_ID int 
+    );
+
+INSERT INTO employee(
+    EMP_ID ,
+    FIRST_Name,
+    LAST_Name ,
+    EMAIL ,
+    Phone_Number,
+    HIRE_Date,
+    JOB_ID,
+    SALARY,
+    COMMISSION,
+    Manager_ID,
+    DEPT_ID 
+    )
+    VALUES(001,'AB', 'CD','mehedi@gmail.com',0174398274,'1-5-23',1000,2500,500,551,101),
+    (002,'EF', 'GH','hasan@gmail.com',0174537533,'2-5-23',1001,2200,500,551,101),
+    (001,'IJ', 'KL','hasib@gmail.com',0174895723,'3-5-23',1003,3500,800,552,102),
+    (001,'MN', 'OP','nafiz@gmail.com',0173245833,'4-5-23',1004,3300,600,552,102);
+
+SELECT FIRST_Name,LAST_Name FROM employee where SALARY > (SELECT SALARY FROM employee where EMP_ID = 2);
+SELECT FIRST_Name,LAST_Name,SALARY,DEPT_ID,JOB_ID FROM employee WHERE JOB_ID = ( SELECT JOB_ID FROM employee WHERE EMP_ID = 2);
+SELECT FIRST_Name,LAST_Name,SALARY,DEPT_ID FROM employee WHERE SALARY = ( SELECT MIN(SALARY) FROM employee);
+SELECT FIRST_Name,LAST_Name,SALARY,DEPT_ID FROM employee WHERE SALARY > ( SELECT AVG(SALARY) FROM employee);
+
+SELECT FIRST_Name,LAST_Name,SALARY,DEPT_ID FROM employee WHERE Manager_ID = 
+( SELECT EMP_ID FROM employee WHERE FIRST_Name = 'AB');
+
